@@ -21,7 +21,7 @@
 
 					nixos-wsl.nixosModules.wsl
 
-					./configuration.nix
+					./kirby.nix
 				];
 			};
 		};
