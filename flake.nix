@@ -10,13 +10,17 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, nixos-wsl, ... }: {
+	outputs = { self, nixpkgs, nixos-wsl, ... }@inputs: {
 		nixosConfigurations = {
 			kirby = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 
 				modules = [
+					./cant-build-if-dirty-git-tree.nix
+					{ _module.args = { inherit inputs; }; }
+
 					nixos-wsl.nixosModules.wsl
+
 					./configuration.nix
 				];
 			};
