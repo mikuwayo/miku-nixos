@@ -3,8 +3,8 @@
 {
   # Enhance nix-shell for development
   programs.direnv = {
-	enable = true;
-	nix-direnv.enable = true;
+    enable = true;
+    nix-direnv.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
