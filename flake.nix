@@ -22,6 +22,8 @@
 					nixos-wsl.nixosModules.wsl
 
 					./kirby.nix
+					./core.nix
+					./dev.nix
 				];
 			};
 		};
